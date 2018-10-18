@@ -1,0 +1,9 @@
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\Bibliotekarz.exe.config
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\Bibliotekarz.exe
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\Bibliotekarz.pdb
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.csprojResolveAssemblyReference.cache
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.Form1.resources
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.Properties.Resources.resources
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.csproj.GenerateResource.Cache
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.exe
+c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.pdb
