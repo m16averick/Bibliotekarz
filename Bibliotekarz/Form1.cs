@@ -24,24 +24,24 @@ namespace Bibliotekarz
         private void bDodawanie_Click(object sender, EventArgs e)
         {
             RodzajDzialania = '+';
-            tbWynik.Text = "";
+            tbInfo.Text = "";
         }
         private void bOdejmowanie_Click(object sender, EventArgs e)
         {
             RodzajDzialania = '-';
-            tbWynik.Text = "";
+            tbInfo.Text = "";
         }
 
         private void bDzielenie_Click(object sender, EventArgs e)
         {
             RodzajDzialania = '/';
-            tbWynik.Text = "";
+            tbInfo.Text = "";
         }
 
         private void bMnożenie_Click(object sender, EventArgs e)
         {
             RodzajDzialania = '*';
-            tbWynik.Text = "";
+            tbInfo.Text = "";
         }
 
 
@@ -50,25 +50,48 @@ namespace Bibliotekarz
             switch (RodzajDzialania)
             {
                 case ('+'):
-                    tbWynik.Text = (int.Parse(LiczbaPierwsza) + int.Parse(LiczbaDruga)).ToString();
+                    tbInfo.Text = (int.Parse(LiczbaPierwsza) + int.Parse(LiczbaDruga)).ToString();
                     break;
                 case ('-'):
-                    tbWynik.Text = (int.Parse(LiczbaPierwsza) - int.Parse(LiczbaDruga)).ToString();
+                    tbInfo.Text = (int.Parse(LiczbaPierwsza) - int.Parse(LiczbaDruga)).ToString();
                     break;
                 case ('*'):
-                    tbWynik.Text = (int.Parse(LiczbaPierwsza) * int.Parse(LiczbaDruga)).ToString();
+                    tbInfo.Text = (int.Parse(LiczbaPierwsza) * int.Parse(LiczbaDruga)).ToString();
                     break;
                 case ('/'):
-                    tbWynik.Text = (int.Parse(LiczbaPierwsza) / int.Parse(LiczbaDruga)).ToString();
+                    tbInfo.Text = (int.Parse(LiczbaPierwsza) / int.Parse(LiczbaDruga)).ToString();
                     break;
 
             }
         }
 
-        private void b0_Click(object sender, EventArgs e)
+        private void tbInfo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnWypozyczenie_Click(object sender, EventArgs e)
         {
             Dzialanie(0);
         }
+
+
+
+        private void btnZwrot_Click(object sender, EventArgs e)
+        {
+            Dzialanie(1);
+        }
+
+        private void btnNowaKsiazka_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNowyCzytelnik_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void b1_Click(object sender, EventArgs e)
         {
@@ -121,12 +144,12 @@ namespace Bibliotekarz
             if (RodzajDzialania == ' ')
             {
                 LiczbaPierwsza += liczba;
-                tbWynik.Text = LiczbaPierwsza;
+                tbInfo.Text = LiczbaPierwsza;
             }
             else
             {
                 LiczbaDruga += liczba;
-                tbWynik.Text = LiczbaDruga;
+                tbInfo.Text = LiczbaDruga;
             }
         }
 
