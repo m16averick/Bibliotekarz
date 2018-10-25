@@ -7,3 +7,7 @@ c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\o
 c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.csproj.GenerateResource.Cache
 c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.exe
 c:\users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.pdb
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.zwrot.resources
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.nowaksiazka.resources
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.nowyczytelnik.resources
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.wypozyczenie.resources

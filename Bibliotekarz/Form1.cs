@@ -62,16 +62,21 @@ namespace Bibliotekarz
         private void btnZwrot_Click(object sender, EventArgs e)
         {
             Dzialanie(1);
+            zwrot zwrot = new zwrot();
+            zwrot.ShowDialog();
         }
 
         private void btnNowaKsiazka_Click(object sender, EventArgs e)
         {
 
+            nowaksiazka nowaksiazka = new nowaksiazka();
+            nowaksiazka.ShowDialog();
         }
 
         private void btnNowyCzytelnik_Click(object sender, EventArgs e)
         {
-
+            nowyczytelnik nowyczytelnik = new nowyczytelnik();
+            nowyczytelnik.ShowDialog();
         }
         
         private void Dzialanie(int liczba)

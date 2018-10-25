@@ -51,6 +51,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="nowyczytelnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nowyczytelnik.Designer.cs">
+      <DependentUpon>nowyczytelnik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nowaksiazka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nowaksiazka.Designer.cs">
+      <DependentUpon>nowaksiazka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="zwrot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="zwrot.Designer.cs">
+      <DependentUpon>zwrot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="wypozyczenie.cs">
@@ -62,6 +80,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="nowaksiazka.resx">
+      <DependentUpon>nowaksiazka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nowyczytelnik.resx">
+      <DependentUpon>nowyczytelnik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -71,6 +95,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="wypozyczenie.resx">
+      <DependentUpon>wypozyczenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zwrot.resx">
+      <DependentUpon>zwrot.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
