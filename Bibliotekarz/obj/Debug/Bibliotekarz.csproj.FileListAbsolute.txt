@@ -11,3 +11,9 @@ C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\o
 C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.nowaksiazka.resources
 C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.nowyczytelnik.resources
 C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.wypozyczenie.resources
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\MySql.Data.dll
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\Google.Protobuf.dll
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\MySql.Data.xml
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\bazaaa.mdb
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\Biblioteka.mdf
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\Biblioteka_log.ldf

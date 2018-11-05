@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Bibliotekarz
 {
+
+
     public partial class Form1 : Form
     {
+
+
+
         public Form1()
         {
+            
             InitializeComponent();
+            
+
+
         }
 
         string LiczbaPierwsza, LiczbaDruga;
@@ -93,8 +104,25 @@ namespace Bibliotekarz
             }
         }
 
+        private void booksBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.booksBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.bazaaaDataSet);
+
+        }
+
+        private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'bazaaaDataSet.books' . Możesz go przenieść lub usunąć.
+            this.booksTableAdapter.Fill(this.bazaaaDataSet.books);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'bazaaaDataSet.books' . Możesz go przenieść lub usunąć.
+            this.booksTableAdapter.Fill(this.bazaaaDataSet.books);
 
         }
 
