@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+
 namespace Bibliotekarz
 {
 
@@ -119,8 +120,6 @@ namespace Bibliotekarz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'bazaaaDataSet.books' . Możesz go przenieść lub usunąć.
-            this.booksTableAdapter.Fill(this.bazaaaDataSet.books);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'bazaaaDataSet.books' . Możesz go przenieść lub usunąć.
             this.booksTableAdapter.Fill(this.bazaaaDataSet.books);
 
