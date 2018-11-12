@@ -66,5 +66,15 @@ namespace Bibliotekarz
 
             
         }
+
+        private void booksBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void wypozyczenie_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

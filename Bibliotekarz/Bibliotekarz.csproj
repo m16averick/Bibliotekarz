@@ -73,11 +73,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="nowyczytelnik.cs">
+    <Compile Include="wszystkieksiazki.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="nowyczytelnik.Designer.cs">
-      <DependentUpon>nowyczytelnik.cs</DependentUpon>
+    <Compile Include="wszystkieksiazki.Designer.cs">
+      <DependentUpon>wszystkieksiazki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="nowaksiazka.cs">
       <SubType>Form</SubType>
@@ -105,9 +110,6 @@
     <EmbeddedResource Include="nowaksiazka.resx">
       <DependentUpon>nowaksiazka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="nowyczytelnik.resx">
-      <DependentUpon>nowyczytelnik.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,6 +119,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="wszystkieksiazki.resx">
+      <DependentUpon>wszystkieksiazki.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="wypozyczenie.resx">
       <DependentUpon>wypozyczenie.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +138,17 @@
     </None>
     <None Include="bazaaaDataSet.xss">
       <DependentUpon>bazaaaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDataSet.xsc">
+      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryDataSet.xss">
+      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

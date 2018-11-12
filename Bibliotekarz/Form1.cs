@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+using System.Data.Common;
+using System.Configuration;
 
 
 namespace Bibliotekarz
@@ -22,38 +24,9 @@ namespace Bibliotekarz
 
         public Form1()
         {
-            
             InitializeComponent();
-            
-
-
         }
 
-        string LiczbaPierwsza, LiczbaDruga;
-        char RodzajDzialania = ' ';
-
-
-
-
-        private void bWynik_Click(object sender, EventArgs e)
-        {
-            switch (RodzajDzialania)
-            {
-                case ('+'):
-                    tbInfo.Text = (int.Parse(LiczbaPierwsza) + int.Parse(LiczbaDruga)).ToString();
-                    break;
-                case ('-'):
-                    tbInfo.Text = (int.Parse(LiczbaPierwsza) - int.Parse(LiczbaDruga)).ToString();
-                    break;
-                case ('*'):
-                    tbInfo.Text = (int.Parse(LiczbaPierwsza) * int.Parse(LiczbaDruga)).ToString();
-                    break;
-                case ('/'):
-                    tbInfo.Text = (int.Parse(LiczbaPierwsza) / int.Parse(LiczbaDruga)).ToString();
-                    break;
-
-            }
-        }
 
         private void tbInfo_TextChanged(object sender, EventArgs e)
         {
@@ -62,7 +35,6 @@ namespace Bibliotekarz
 
         private void btnWypozyczenie_Click(object sender, EventArgs e)
         {
-            Dzialanie(0);
             //this.Hide();
             wypozyczenie wypozyczenie = new wypozyczenie();
             wypozyczenie.ShowDialog();
@@ -73,7 +45,7 @@ namespace Bibliotekarz
 
         private void btnZwrot_Click(object sender, EventArgs e)
         {
-            Dzialanie(1);
+
             zwrot zwrot = new zwrot();
             zwrot.ShowDialog();
         }
@@ -87,23 +59,11 @@ namespace Bibliotekarz
 
         private void btnNowyCzytelnik_Click(object sender, EventArgs e)
         {
-            nowyczytelnik nowyczytelnik = new nowyczytelnik();
-            nowyczytelnik.ShowDialog();
+            wypozyczenie wypozyczenie = new wypozyczenie();
+            wypozyczenie.ShowDialog();
         }
-        
-        private void Dzialanie(int liczba)
-        {
-            if (RodzajDzialania == ' ')
-            {
-                LiczbaPierwsza += liczba;
-                tbInfo.Text = LiczbaPierwsza;
-            }
-            else
-            {
-                LiczbaDruga += liczba;
-                tbInfo.Text = LiczbaDruga;
-            }
-        }
+
+
 
         private void booksBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -118,16 +78,57 @@ namespace Bibliotekarz
 
         }
 
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'bazaaaDataSet.books' . Możesz go przenieść lub usunąć.
-            this.booksTableAdapter.Fill(this.bazaaaDataSet.books);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
+            int liczba_ksiazek =0;
+
+            string provider = ConfigurationManager.AppSettings["provider"];
+            string connectionString = ConfigurationManager.AppSettings["connectionString"];
+            DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
+
+            using (DbConnection connection = factory.CreateConnection())
+            {
+                if (connection == null)
+                {
+                    tbInfo.Text = "Connection Error";
+                }
+
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = factory.CreateCommand();
+
+                if (command == null)
+                {
+                    tbInfo.Text = "Command Error";
+                }
+
+                command.Connection = connection;
+                command.CommandText = "Select * From Books";
+
+                using (DbDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        liczba_ksiazek++;
+                        tbInfo.Text += $"{dataReader["Id"]} " + $"{dataReader["title"]} " + Environment.NewLine;
+
+                    }
+                }
+
+            }
+
+
+
 
         }
 
+        private void btnWszystkieKsiazki_Click(object sender, EventArgs e)
+        {
+            wszystkieksiazki wszystkieksiazki = new wszystkieksiazki();
+            wszystkieksiazki.ShowDialog();
 
-
-
-
+        }
     }
 }

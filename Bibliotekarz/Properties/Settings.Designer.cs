@@ -32,5 +32,16 @@ namespace Bibliotekarz.Properties {
                 return ((string)(this["bazaaaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True" +
+            ";Pooling=False")]
+        public string LibraryConnectionString {
+            get {
+                return ((string)(this["LibraryConnectionString"]));
+            }
+        }
     }
 }
