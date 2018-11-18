@@ -39,6 +39,7 @@
             this.booksTableAdapter = new Bibliotekarz.bazaaaDataSetTableAdapters.booksTableAdapter();
             this.tableAdapterManager = new Bibliotekarz.bazaaaDataSetTableAdapters.TableAdapterManager();
             this.btnWszystkieKsiazki = new System.Windows.Forms.Button();
+            this.btnWszyscyCzytelnicy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazaaaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -129,11 +130,23 @@
             this.btnWszystkieKsiazki.UseVisualStyleBackColor = true;
             this.btnWszystkieKsiazki.Click += new System.EventHandler(this.btnWszystkieKsiazki_Click);
             // 
+            // btnWszyscyCzytelnicy
+            // 
+            this.btnWszyscyCzytelnicy.Location = new System.Drawing.Point(427, 291);
+            this.btnWszyscyCzytelnicy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnWszyscyCzytelnicy.Name = "btnWszyscyCzytelnicy";
+            this.btnWszyscyCzytelnicy.Size = new System.Drawing.Size(171, 37);
+            this.btnWszyscyCzytelnicy.TabIndex = 6;
+            this.btnWszyscyCzytelnicy.Text = "Wszyscy czytelnicy";
+            this.btnWszyscyCzytelnicy.UseVisualStyleBackColor = true;
+            this.btnWszyscyCzytelnicy.Click += new System.EventHandler(this.btnWszyscyCzytelnicy_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 523);
+            this.Controls.Add(this.btnWszyscyCzytelnicy);
             this.Controls.Add(this.btnWszystkieKsiazki);
             this.Controls.Add(this.btnNowyCzytelnik);
             this.Controls.Add(this.btnNowaKsiazka);
@@ -165,6 +178,7 @@
         private bazaaaDataSetTableAdapters.booksTableAdapter booksTableAdapter;
         private bazaaaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button btnWszystkieKsiazki;
+        private System.Windows.Forms.Button btnWszyscyCzytelnicy;
     }
 }
 

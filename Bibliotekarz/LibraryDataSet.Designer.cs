@@ -28,6 +28,8 @@ namespace Bibliotekarz {
         
         private ReadersDataTable tableReaders;
         
+        private global::System.Data.DataRelation relationBooks_Readers;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -218,6 +220,7 @@ namespace Bibliotekarz {
                     this.tableReaders.InitVars();
                 }
             }
+            this.relationBooks_Readers = this.Relations["Books_Readers"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -232,6 +235,10 @@ namespace Bibliotekarz {
             base.Tables.Add(this.tableBooks);
             this.tableReaders = new ReadersDataTable();
             base.Tables.Add(this.tableReaders);
+            this.relationBooks_Readers = new global::System.Data.DataRelation("Books_Readers", new global::System.Data.DataColumn[] {
+                        this.tableBooks.LenderColumn}, new global::System.Data.DataColumn[] {
+                        this.tableReaders.IdColumn}, false);
+            this.Relations.Add(this.relationBooks_Readers);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -780,10 +787,10 @@ namespace Bibliotekarz {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ReadersRow AddReadersRow(int Id, string Name, string Surname, string City, int Postcode, string Street, string Number, int Apartament) {
+            public ReadersRow AddReadersRow(BooksRow parentBooksRowByBooks_Readers, string Name, string Surname, string City, int Postcode, string Street, string Number, int Apartament) {
                 ReadersRow rowReadersRow = ((ReadersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
+                        null,
                         Name,
                         Surname,
                         City,
@@ -791,6 +798,9 @@ namespace Bibliotekarz {
                         Street,
                         Number,
                         Apartament};
+                if ((parentBooksRowByBooks_Readers != null)) {
+                    columnValuesArray[0] = parentBooksRowByBooks_Readers[3];
+                }
                 rowReadersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReadersRow);
                 return rowReadersRow;
@@ -1120,6 +1130,17 @@ namespace Bibliotekarz {
             public void SetTerminNull() {
                 this[this.tableBooks.TerminColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ReadersRow[] GetReadersRows() {
+                if ((this.Table.ChildRelations["Books_Readers"] == null)) {
+                    return new ReadersRow[0];
+                }
+                else {
+                    return ((ReadersRow[])(base.GetChildRows(this.Table.ChildRelations["Books_Readers"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1256,6 +1277,17 @@ namespace Bibliotekarz {
                 }
                 set {
                     this[this.tableReaders.ApartamentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BooksRow BooksRow {
+                get {
+                    return ((BooksRow)(this.GetParentRow(this.Table.ParentRelations["Books_Readers"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Books_Readers"]);
                 }
             }
             
@@ -1598,11 +1630,15 @@ SELECT Id, Title, Author, Lender, Termin FROM Books WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Title, Author, Lender, Termin FROM dbo.Books";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Title, Author, Lender, Termin FROM dbo.Books";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1627,6 +1663,19 @@ SELECT Id, Title, Author, Lender, Termin FROM Books WHERE (Id = @Id)";
             LibraryDataSet.BooksDataTable dataTable = new LibraryDataSet.BooksDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(LibraryDataSet.BooksDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

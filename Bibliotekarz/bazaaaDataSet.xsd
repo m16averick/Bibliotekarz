@@ -72,7 +72,16 @@
               <Mapping SourceColumn="Lender" DataSetColumn="Lender" />
               <Mapping SourceColumn="Termin" DataSetColumn="Termin" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="bazaaaConnectionString (Settings)" DbObjectName="books" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Identyfikator, Title, Autor, Lender, Termin FROM books</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="czytelnicyTableAdapter" GeneratorDataComponentClassName="czytelnicyTableAdapter" Name="czytelnicy" UserDataComponentName="czytelnicyTableAdapter">
             <MainSource>
@@ -170,7 +179,7 @@
   <xs:element name="bazaaaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="bazaaaDataSet" msprop:Generator_UserDSName="bazaaaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="books" msprop:Generator_TableClassName="booksDataTable" msprop:Generator_TableVarName="tablebooks" msprop:Generator_TablePropName="books" msprop:Generator_RowDeletingName="booksRowDeleting" msprop:Generator_RowChangingName="booksRowChanging" msprop:Generator_RowEvHandlerName="booksRowChangeEventHandler" msprop:Generator_RowDeletedName="booksRowDeleted" msprop:Generator_UserTableName="books" msprop:Generator_RowChangedName="booksRowChanged" msprop:Generator_RowEvArgName="booksRowChangeEvent" msprop:Generator_RowClassName="booksRow">
+        <xs:element name="books" msprop:Generator_TableClassName="booksDataTable" msprop:Generator_TableVarName="tablebooks" msprop:Generator_RowChangedName="booksRowChanged" msprop:Generator_TablePropName="books" msprop:Generator_RowDeletingName="booksRowDeleting" msprop:Generator_RowChangingName="booksRowChanging" msprop:Generator_RowEvHandlerName="booksRowChangeEventHandler" msprop:Generator_RowDeletedName="booksRowDeleted" msprop:Generator_RowClassName="booksRow" msprop:Generator_UserTableName="books" msprop:Generator_RowEvArgName="booksRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Identyfikator" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdentyfikator" msprop:Generator_ColumnPropNameInRow="Identyfikator" msprop:Generator_ColumnPropNameInTable="IdentyfikatorColumn" msprop:Generator_UserColumnName="Identyfikator" type="xs:int" />
@@ -199,7 +208,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="czytelnicy" msprop:Generator_TableClassName="czytelnicyDataTable" msprop:Generator_TableVarName="tableczytelnicy" msprop:Generator_TablePropName="czytelnicy" msprop:Generator_RowDeletingName="czytelnicyRowDeleting" msprop:Generator_RowChangingName="czytelnicyRowChanging" msprop:Generator_RowEvHandlerName="czytelnicyRowChangeEventHandler" msprop:Generator_RowDeletedName="czytelnicyRowDeleted" msprop:Generator_UserTableName="czytelnicy" msprop:Generator_RowChangedName="czytelnicyRowChanged" msprop:Generator_RowEvArgName="czytelnicyRowChangeEvent" msprop:Generator_RowClassName="czytelnicyRow">
+        <xs:element name="czytelnicy" msprop:Generator_TableClassName="czytelnicyDataTable" msprop:Generator_TableVarName="tableczytelnicy" msprop:Generator_RowChangedName="czytelnicyRowChanged" msprop:Generator_TablePropName="czytelnicy" msprop:Generator_RowDeletingName="czytelnicyRowDeleting" msprop:Generator_RowChangingName="czytelnicyRowChanging" msprop:Generator_RowEvHandlerName="czytelnicyRowChangeEventHandler" msprop:Generator_RowDeletedName="czytelnicyRowDeleted" msprop:Generator_RowClassName="czytelnicyRow" msprop:Generator_UserTableName="czytelnicy" msprop:Generator_RowEvArgName="czytelnicyRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Identyfikator" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdentyfikator" msprop:Generator_ColumnPropNameInRow="Identyfikator" msprop:Generator_ColumnPropNameInTable="IdentyfikatorColumn" msprop:Generator_UserColumnName="Identyfikator" type="xs:int" />

@@ -82,7 +82,8 @@ namespace Bibliotekarz
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
-            int liczba_ksiazek =0;
+            int liczba_ksiazek = 0;
+            int liczba_wypozyczonych_ksiazek = 0;
 
             string provider = ConfigurationManager.AppSettings["provider"];
             string connectionString = ConfigurationManager.AppSettings["connectionString"];
@@ -112,6 +113,7 @@ namespace Bibliotekarz
                     while (dataReader.Read())
                     {
                         liczba_ksiazek++;
+                        if ($"{dataReader["lender"]} " != " ") liczba_wypozyczonych_ksiazek++;
                         tbInfo.Text += $"{dataReader["Id"]} " + $"{dataReader["title"]} " + Environment.NewLine;
 
                     }
@@ -119,7 +121,7 @@ namespace Bibliotekarz
 
             }
 
-
+            tbInfo.Text += "Biblioteka jest obecnie w posiadaniu " + liczba_ksiazek + " książek z czego " + liczba_wypozyczonych_ksiazek + " znajduje sie w wypozyczeniu.";
 
 
         }
@@ -129,6 +131,12 @@ namespace Bibliotekarz
             wszystkieksiazki wszystkieksiazki = new wszystkieksiazki();
             wszystkieksiazki.ShowDialog();
 
+        }
+
+        private void btnWszyscyCzytelnicy_Click(object sender, EventArgs e)
+        {
+            wszyscyczytelnicy wszyscyczytelnicy = new wszyscyczytelnicy();
+            wszyscyczytelnicy.ShowDialog();
         }
     }
 }

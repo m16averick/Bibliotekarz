@@ -73,6 +73,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LibraryDataSet.cs">
+      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wszyscyczytelnicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wszyscyczytelnicy.Designer.cs">
+      <DependentUpon>wszyscyczytelnicy.cs</DependentUpon>
+    </Compile>
     <Compile Include="wszystkieksiazki.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +128,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="wszyscyczytelnicy.resx">
+      <DependentUpon>wszyscyczytelnicy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="wszystkieksiazki.resx">
       <DependentUpon>wszystkieksiazki.cs</DependentUpon>
     </EmbeddedResource>

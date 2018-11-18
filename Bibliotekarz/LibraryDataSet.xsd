@@ -76,7 +76,16 @@ SELECT Id, Title, Author, Lender, Termin FROM Books WHERE (Id = @Id)</CommandTex
               <Mapping SourceColumn="Lender" DataSetColumn="Lender" />
               <Mapping SourceColumn="Termin" DataSetColumn="Termin" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="LibraryConnectionString (Settings)" DbObjectName="Library.dbo.Books" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Title, Author, Lender, Termin FROM dbo.Books</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReadersTableAdapter" GeneratorDataComponentClassName="ReadersTableAdapter" Name="Readers" UserDataComponentName="ReadersTableAdapter">
             <MainSource>
@@ -256,4 +265,9 @@ SELECT Id, Name, Surname, City, Postcode, Street, Number, Apartament FROM Reader
       <xs:field xpath="mstns:Id" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Books_Readers" msdata:parent="Books" msdata:child="Readers" msdata:parentkey="Lender" msdata:childkey="Id" msprop:Generator_UserChildTable="Readers" msprop:Generator_ChildPropName="GetReadersRows" msprop:Generator_UserRelationName="Books_Readers" msprop:Generator_RelationVarName="relationBooks_Readers" msprop:Generator_UserParentTable="Books" msprop:Generator_ParentPropName="BooksRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

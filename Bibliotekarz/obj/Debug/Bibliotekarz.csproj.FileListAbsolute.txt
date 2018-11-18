@@ -17,3 +17,4 @@ C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\b
 C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\Biblioteka.mdf
 C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\bin\Debug\Biblioteka_log.ldf
 C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.wszystkieksiazki.resources
+C:\Users\m16av\documents\visual studio 2017\Projects\Bibliotekarz\Bibliotekarz\obj\Debug\Bibliotekarz.wszyscyczytelnicy.resources
