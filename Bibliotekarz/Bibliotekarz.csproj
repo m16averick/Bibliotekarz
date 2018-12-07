@@ -76,6 +76,12 @@
     <Compile Include="LibraryDataSet.cs">
       <DependentUpon>LibraryDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="nowyczytelnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nowyczytelnik.Designer.cs">
+      <DependentUpon>nowyczytelnik.cs</DependentUpon>
+    </Compile>
     <Compile Include="wszyscyczytelnicy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nowaksiazka.resx">
       <DependentUpon>nowaksiazka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nowyczytelnik.resx">
+      <DependentUpon>nowyczytelnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

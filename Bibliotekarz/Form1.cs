@@ -59,8 +59,8 @@ namespace Bibliotekarz
 
         private void btnNowyCzytelnik_Click(object sender, EventArgs e)
         {
-            wypozyczenie wypozyczenie = new wypozyczenie();
-            wypozyczenie.ShowDialog();
+            nowyczytelnik nowyczytelnik = new nowyczytelnik();
+            nowyczytelnik.ShowDialog();
         }
 
 

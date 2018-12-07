@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,36 +12,11 @@ using System.Windows.Forms;
 
 namespace Bibliotekarz
 {
-    public partial class nowaksiazka : Form
+    public partial class nowyczytelnik : Form
     {
-        public nowaksiazka()
+        public nowyczytelnik()
         {
             InitializeComponent();
-        }
-
-        private void booksBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.booksBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bazaaaDataSet);
-
-        }
-
-        private void nowaksiazka_Load(object sender, EventArgs e)
-        {
-
-
-
-        }
-
-        private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void identyfikatorTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,10 +24,21 @@ namespace Bibliotekarz
 
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
-            int liczba_ksiazek = 1;
+
+            int liczba_czytelnikow = 1;
 
 
             string provider = ConfigurationManager.AppSettings["provider"];
@@ -77,19 +62,19 @@ namespace Bibliotekarz
                 }
 
                 command.Connection = connection;
-                command.CommandText = "Select * From Books";
+                command.CommandText = "Select * From Readers";
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {
                     while (dataReader.Read())
                     {
-                        liczba_ksiazek++;
+                        liczba_czytelnikow++;
 
                     }
                 }
 
                 command.Connection = connection;
-                command.CommandText = "Insert INTO Books (Id, Title, Author) VALUES(" + liczba_ksiazek + ", '" + txtTitle.Text + "','" + txtAuthor.Text + "');";
+                command.CommandText = "Insert INTO Readers (Id, Name, Surname, City, Postcode, Street, Number, Apartament) VALUES(" + liczba_czytelnikow + ", '" + txtName.Text + "','" + txtSurname.Text + "','" + txtCity.Text + "','" + txtPostcode.Text + "','" + txtStreet.Text + "','" + txtNumber.Text + "','" + txtApartament.Text + "');";
 
                 using (DbDataReader dataReader2 = command.ExecuteReader())
                 {
@@ -97,16 +82,9 @@ namespace Bibliotekarz
                 }
 
 
-                txtApprove.Text = txtTitle.Text + " znajduje się w bazie";
+                txtApprove.Text = txtName.Text + " " + txtSurname.Text + " znajduje się w bazie";
 
-        }
-
-
-    }
-
-        private void txtTitle_TextChanged(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }

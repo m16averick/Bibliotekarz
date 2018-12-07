@@ -40,6 +40,7 @@
             this.tableAdapterManager = new Bibliotekarz.bazaaaDataSetTableAdapters.TableAdapterManager();
             this.btnWszystkieKsiazki = new System.Windows.Forms.Button();
             this.btnWszyscyCzytelnicy = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bazaaaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -141,11 +142,21 @@
             this.btnWszyscyCzytelnicy.UseVisualStyleBackColor = true;
             this.btnWszyscyCzytelnicy.Click += new System.EventHandler(this.btnWszyscyCzytelnicy_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(427, 333);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 37);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Zaległości";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 523);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnWszyscyCzytelnicy);
             this.Controls.Add(this.btnWszystkieKsiazki);
             this.Controls.Add(this.btnNowyCzytelnik);
@@ -179,6 +190,7 @@
         private bazaaaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button btnWszystkieKsiazki;
         private System.Windows.Forms.Button btnWszyscyCzytelnicy;
+        private System.Windows.Forms.Button button1;
     }
 }
 

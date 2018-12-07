@@ -64,7 +64,7 @@ namespace Bibliotekarz
 
 
 
-            
+
         }
 
         private void booksBindingNavigator_RefreshItems(object sender, EventArgs e)
@@ -119,44 +119,44 @@ namespace Bibliotekarz
 
         void Fillcombo()
         {
-/*
-            string provider = ConfigurationManager.AppSettings["provider"];
-            string connectionString = ConfigurationManager.AppSettings["connectionString"];
-            DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
+            /*
+                        string provider = ConfigurationManager.AppSettings["provider"];
+                        string connectionString = ConfigurationManager.AppSettings["connectionString"];
+                        DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
 
-            using (DbConnection connection = factory.CreateConnection())
-            {
-                if (connection == null)
-                {
-                    //tbInfo.Text = "Connection Error";
-                }
+                        using (DbConnection connection = factory.CreateConnection())
+                        {
+                            if (connection == null)
+                            {
+                                //tbInfo.Text = "Connection Error";
+                            }
 
-                connection.ConnectionString = connectionString;
-                connection.Open();
-                DbCommand command = factory.CreateCommand();
+                            connection.ConnectionString = connectionString;
+                            connection.Open();
+                            DbCommand command = factory.CreateCommand();
 
-                if (command == null)
-                {
-                    //tbInfo.Text = "Command Error";
-                }
+                            if (command == null)
+                            {
+                                //tbInfo.Text = "Command Error";
+                            }
 
-                command.Connection = connection;
-                command.CommandText = "Select * From Books";
+                            command.Connection = connection;
+                            command.CommandText = "Select * From Books";
 
-                using (DbDataReader dataReader = command.ExecuteReader())
-                {
-                    while (dataReader.Read())
-                    {
+                            using (DbDataReader dataReader = command.ExecuteReader())
+                            {
+                                while (dataReader.Read())
+                                {
 
-                        //tbInfo.Text += $"{dataReader["Id"]} " + $"{dataReader["title"]} " + Environment.NewLine;
+                                    //tbInfo.Text += $"{dataReader["Id"]} " + $"{dataReader["title"]} " + Environment.NewLine;
 
-                        comboBox1.Items.Add($"{dataReader["title"]} ");
+                                    comboBox1.Items.Add($"{dataReader["title"]} ");
 
-                    }
-                }
+                                }
+                            }
 
-            }
-            */
+                        }
+                        */
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,5 +176,142 @@ namespace Bibliotekarz
             }
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+            //            int liczba_ksiazek = 1;
+
+
+            string provider = ConfigurationManager.AppSettings["provider"];
+            string connectionString = ConfigurationManager.AppSettings["connectionString"];
+            DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
+
+            using (DbConnection connection = factory.CreateConnection())
+            {
+                if (connection == null)
+                {
+                    label1.Text = "Connection Error";
+                }
+
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = factory.CreateCommand();
+
+                if (command == null)
+                {
+                    label1.Text = "Connection Error";
+                }
+
+                command.Connection = connection;
+                command.CommandText = "Select * From Books";
+
+                using (DbDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        //liczba_ksiazek++;
+
+                    }
+                }
+
+                command.Connection = connection;
+                command.CommandText = "Update Books SET Lender = 2 Where Id = 4";
+
+                using (DbDataReader dataReader2 = command.ExecuteReader())
+                {
+
+                }
+
+
+                txtApprove.Text = " znajduje się w bazie";
+
+            }
+
+
+        }
+                   
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            string provider = ConfigurationManager.AppSettings["provider"];
+            string connectionString = ConfigurationManager.AppSettings["connectionString"];
+            DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
+
+            using (DbConnection connection = factory.CreateConnection())
+            {
+                if (connection == null)
+                {
+                    label1.Text = "Connection Error";
+                }
+
+                connection.ConnectionString = connectionString;
+                connection.Open();
+                DbCommand command = factory.CreateCommand();
+
+                if (command == null)
+                {
+                    label1.Text = "Command Error";
+                }
+
+                command.Connection = connection;
+                command.CommandText = "Update Books SET Lender=" + Int32.Parse(txtIdR.Text) + "Where Id=" + Int32.Parse(txtIdB.Text);
+
+                using (DbDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        //label1.Text += $"{dataReader["Id"]} " + $"{dataReader["title"]} ";
+
+                    }
+                }
+
+                command.CommandText = "Select * From Readers Where Id="+Int32.Parse(txtIdR.Text);
+                
+
+                using (DbDataReader dataReader2 = command.ExecuteReader())
+                {
+                    while (dataReader2.Read())
+                    {
+                        txtApprove.Text = $"{dataReader2["Name"]} " + $"{dataReader2["Surname"]} ";
+
+                    }
+                }
+
+            
+
+
+            txtApprove.Text += "Wypożycza ";
+
+            command.CommandText = "Select * From Books Where Id=" + Int32.Parse(txtIdB.Text);
+
+
+            using (DbDataReader dataReader3 = command.ExecuteReader())
+            {
+                while (dataReader3.Read())
+                {
+                    txtApprove.Text += $"{dataReader3["Title"]} " /* + $"{dataReader3["Author"]} "*/ ;
+
+                }
+            }
+
+        }
+
     }
-}
+        }
+    }
