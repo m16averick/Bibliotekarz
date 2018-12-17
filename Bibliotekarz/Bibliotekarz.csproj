@@ -62,11 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bazaaaDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>bazaaaDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,17 +144,6 @@
     <EmbeddedResource Include="zwrot.resx">
       <DependentUpon>zwrot.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bazaaaDataSet.xsc">
-      <DependentUpon>bazaaaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="bazaaaDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>bazaaaDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="bazaaaDataSet.xss">
-      <DependentUpon>bazaaaDataSet.xsd</DependentUpon>
-    </None>
     <None Include="LibraryDataSet.xsc">
       <DependentUpon>LibraryDataSet.xsd</DependentUpon>
     </None>
@@ -197,9 +181,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bazaaa.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Biblioteka.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -69,7 +69,7 @@ namespace Bibliotekarz
         {
             this.Validate();
             this.booksBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bazaaaDataSet);
+
 
         }
 
@@ -84,6 +84,7 @@ namespace Bibliotekarz
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
             int liczba_ksiazek = 0;
             int liczba_wypozyczonych_ksiazek = 0;
+            int zaleglosci = 0;
 
             string provider = ConfigurationManager.AppSettings["provider"];
             string connectionString = ConfigurationManager.AppSettings["connectionString"];

@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bazaaaDataSet = new Bibliotekarz.bazaaaDataSet();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter = new Bibliotekarz.bazaaaDataSetTableAdapters.booksTableAdapter();
-            this.tableAdapterManager = new Bibliotekarz.bazaaaDataSetTableAdapters.TableAdapterManager();
             this.libraryDataSet = new Bibliotekarz.LibraryDataSet();
             this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter1 = new Bibliotekarz.LibraryDataSetTableAdapters.BooksTableAdapter();
@@ -55,7 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtApprove = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bazaaaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
@@ -74,24 +70,19 @@
             // 
             // bazaaaDataSet
             // 
-            this.bazaaaDataSet.DataSetName = "bazaaaDataSet";
-            this.bazaaaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // booksBindingSource
             // 
             this.booksBindingSource.DataMember = "books";
-            this.booksBindingSource.DataSource = this.bazaaaDataSet;
+
             // 
             // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
+
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.booksTableAdapter = this.booksTableAdapter;
-            this.tableAdapterManager.czytelnicyTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Bibliotekarz.bazaaaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+
             // 
             // libraryDataSet
             // 
@@ -240,8 +231,6 @@
             this.Name = "wypozyczenie";
             this.Text = "wypozyczenie";
             this.Load += new System.EventHandler(this.wypozyczenie_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bazaaaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).EndInit();
@@ -261,10 +250,7 @@
         }
 
         #endregion
-        private bazaaaDataSet bazaaaDataSet;
         private System.Windows.Forms.BindingSource booksBindingSource;
-        private bazaaaDataSetTableAdapters.booksTableAdapter booksTableAdapter;
-        private bazaaaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private LibraryDataSet libraryDataSet;
         private System.Windows.Forms.BindingSource booksBindingSource1;
         private LibraryDataSetTableAdapters.BooksTableAdapter booksTableAdapter1;

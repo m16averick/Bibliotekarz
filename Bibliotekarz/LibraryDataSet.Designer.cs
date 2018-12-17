@@ -441,7 +441,7 @@ namespace Bibliotekarz {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BooksRow AddBooksRow(int Id, string Title, string Author, int Lender, System.DateTime Termin) {
+            public BooksRow AddBooksRow(int Id, string Title, string Author, int Lender, string Termin) {
                 BooksRow rowBooksRow = ((BooksRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -496,7 +496,7 @@ namespace Bibliotekarz {
                 base.Columns.Add(this.columnAuthor);
                 this.columnLender = new global::System.Data.DataColumn("Lender", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLender);
-                this.columnTermin = new global::System.Data.DataColumn("Termin", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnTermin = new global::System.Data.DataColumn("Termin", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTermin);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
@@ -1069,10 +1069,10 @@ namespace Bibliotekarz {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Termin {
+            public string Termin {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableBooks.TerminColumn]));
+                        return ((string)(this[this.tableBooks.TerminColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Termin\' w tabeli \'Books\' to DBNull.", e);

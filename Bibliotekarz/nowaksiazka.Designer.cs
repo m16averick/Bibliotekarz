@@ -29,40 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bazaaaDataSet = new Bibliotekarz.bazaaaDataSet();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter = new Bibliotekarz.bazaaaDataSetTableAdapters.booksTableAdapter();
-            this.tableAdapterManager = new Bibliotekarz.bazaaaDataSetTableAdapters.TableAdapterManager();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtApprove = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.bazaaaDataSet)).BeginInit();
+
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bazaaaDataSet
             // 
-            this.bazaaaDataSet.DataSetName = "bazaaaDataSet";
-            this.bazaaaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // booksBindingSource
             // 
             this.booksBindingSource.DataMember = "books";
-            this.booksBindingSource.DataSource = this.bazaaaDataSet;
-            // 
-            // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.booksTableAdapter = this.booksTableAdapter;
-            this.tableAdapterManager.czytelnicyTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Bibliotekarz.bazaaaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // txtTitle
             // 
@@ -130,8 +114,6 @@
             this.Name = "nowaksiazka";
             this.Text = "Nowa książka";
             this.Load += new System.EventHandler(this.nowaksiazka_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bazaaaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,10 +121,7 @@
 
         #endregion
 
-        private bazaaaDataSet bazaaaDataSet;
         private System.Windows.Forms.BindingSource booksBindingSource;
-        private bazaaaDataSetTableAdapters.booksTableAdapter booksTableAdapter;
-        private bazaaaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

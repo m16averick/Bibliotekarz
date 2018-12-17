@@ -34,14 +34,10 @@
             this.btnZwrot = new System.Windows.Forms.Button();
             this.btnNowaKsiazka = new System.Windows.Forms.Button();
             this.btnNowyCzytelnik = new System.Windows.Forms.Button();
-            this.bazaaaDataSet = new Bibliotekarz.bazaaaDataSet();
-            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.booksTableAdapter = new Bibliotekarz.bazaaaDataSetTableAdapters.booksTableAdapter();
-            this.tableAdapterManager = new Bibliotekarz.bazaaaDataSetTableAdapters.TableAdapterManager();
             this.btnWszystkieKsiazki = new System.Windows.Forms.Button();
             this.btnWszyscyCzytelnicy = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.bazaaaDataSet)).BeginInit();
+            this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,27 +95,6 @@
             this.btnNowyCzytelnik.UseVisualStyleBackColor = true;
             this.btnNowyCzytelnik.Click += new System.EventHandler(this.btnNowyCzytelnik_Click);
             // 
-            // bazaaaDataSet
-            // 
-            this.bazaaaDataSet.DataSetName = "bazaaaDataSet";
-            this.bazaaaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // booksBindingSource
-            // 
-            this.booksBindingSource.DataMember = "books";
-            this.booksBindingSource.DataSource = this.bazaaaDataSet;
-            // 
-            // booksTableAdapter
-            // 
-            this.booksTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.booksTableAdapter = this.booksTableAdapter;
-            this.tableAdapterManager.czytelnicyTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Bibliotekarz.bazaaaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // btnWszystkieKsiazki
             // 
             this.btnWszystkieKsiazki.Location = new System.Drawing.Point(427, 250);
@@ -151,6 +126,14 @@
             this.button1.Text = "Zaległości";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // bazaaaDataSet
+            // 
+
+            // 
+            // booksBindingSource
+            // 
+            this.booksBindingSource.DataMember = "books";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,8 +153,6 @@
             this.Name = "Form1";
             this.Text = "Bibliotekarz";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bazaaaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,10 +165,7 @@
         private System.Windows.Forms.Button btnZwrot;
         private System.Windows.Forms.Button btnNowaKsiazka;
         private System.Windows.Forms.Button btnNowyCzytelnik;
-        private bazaaaDataSet bazaaaDataSet;
         private System.Windows.Forms.BindingSource booksBindingSource;
-        private bazaaaDataSetTableAdapters.booksTableAdapter booksTableAdapter;
-        private bazaaaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Button btnWszystkieKsiazki;
         private System.Windows.Forms.Button btnWszyscyCzytelnicy;
         private System.Windows.Forms.Button button1;

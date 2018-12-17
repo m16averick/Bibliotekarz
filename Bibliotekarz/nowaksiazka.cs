@@ -24,7 +24,7 @@ namespace Bibliotekarz
         {
             this.Validate();
             this.booksBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.bazaaaDataSet);
+
 
         }
 

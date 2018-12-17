@@ -1,0 +1,1 @@
+﻿Update Books SET Lender=3, Termin='17.12.2018' Where Id=1

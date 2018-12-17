@@ -108,7 +108,7 @@ namespace Bibliotekarz
         {
             try
             {
-                this.booksTableAdapter.FillBy(this.bazaaaDataSet.books);
+
             }
             catch (System.Exception ex)
             {
@@ -269,8 +269,11 @@ namespace Bibliotekarz
                     label1.Text = "Command Error";
                 }
 
+                
+
                 command.Connection = connection;
-                command.CommandText = "Update Books SET Lender=" + Int32.Parse(txtIdR.Text) + "Where Id=" + Int32.Parse(txtIdB.Text);
+                command.CommandText = "Update Books SET Lender=" + Int32.Parse(txtIdR.Text) + ", Termin='" + DateTime.Now.AddDays(14).ToShortDateString() + "' Where Id=" + Int32.Parse(txtIdB.Text);
+                //               command.CommandText = "Update Books SET Lender=" + Int32.Parse(txtIdR.Text) + "Where Id=" + Int32.Parse(txtIdB.Text);
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {
