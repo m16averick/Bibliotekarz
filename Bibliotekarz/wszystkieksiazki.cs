@@ -27,6 +27,8 @@ namespace Bibliotekarz
 
         private void wszystkieksiazki_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Readers' . Możesz go przenieść lub usunąć.
+            this.readersTableAdapter.Fill(this.libraryDataSet.Readers);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
             this.booksTableAdapter.Fill(this.libraryDataSet.Books);
 

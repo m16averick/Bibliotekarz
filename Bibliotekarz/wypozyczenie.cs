@@ -74,6 +74,8 @@ namespace Bibliotekarz
 
         private void wypozyczenie_Load(object sender, EventArgs e)
         {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet11.Readers' . Możesz go przenieść lub usunąć.
+            this.readersTableAdapter1.Fill(this.libraryDataSet11.Readers);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet1.Readers' . Możesz go przenieść lub usunąć.
             this.readersTableAdapter.Fill(this.libraryDataSet1.Readers);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet1.Books' . Możesz go przenieść lub usunąć.
@@ -316,5 +318,23 @@ namespace Bibliotekarz
         }
 
     }
+
+        private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            object value = booksDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            if (value is DBNull) { return; }
+
+            string IdKsiazki = value.ToString();
+            txtIdB.Text = IdKsiazki;
+        }
+
+        private void readersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            object value = booksDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            if (value is DBNull) { return; }
+
+            string IdCzytelnika = value.ToString();
+            txtIdR.Text = IdCzytelnika;
         }
     }
+}

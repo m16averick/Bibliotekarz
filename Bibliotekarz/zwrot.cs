@@ -95,5 +95,36 @@ namespace Bibliotekarz
         {
 
         }
+
+        private void booksBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.booksBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.libraryDataSet);
+
+        }
+
+        private void zwrot_Load(object sender, EventArgs e)
+        {
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Readers' . Możesz go przenieść lub usunąć.
+            this.readersTableAdapter.Fill(this.libraryDataSet.Readers);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
+            this.booksTableAdapter.Fill(this.libraryDataSet.Books);
+
+        }
+
+        private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            object value = booksDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            if (value is DBNull) { return; }
+
+            object value2 = booksDataGridView.Rows[e.RowIndex].Cells[3].Value;
+            if (value is DBNull) { return; }
+
+            string IdKsiazki = value.ToString();
+            string IdCzytelnika = value2.ToString();
+            txtIdB.Text = IdKsiazki;
+            txtIdR.Text = IdCzytelnika;
+        }
     }
 }
