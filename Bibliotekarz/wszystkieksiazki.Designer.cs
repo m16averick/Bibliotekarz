@@ -63,6 +63,7 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingNavigator)).BeginInit();
@@ -112,7 +113,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.booksBindingNavigatorSaveItem});
+            this.booksBindingNavigatorSaveItem,
+            this.toolStripButton1});
             this.booksBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.booksBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.booksBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -120,7 +122,7 @@
             this.booksBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.booksBindingNavigator.Name = "booksBindingNavigator";
             this.booksBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.booksBindingNavigator.Size = new System.Drawing.Size(574, 27);
+            this.booksBindingNavigator.Size = new System.Drawing.Size(430, 27);
             this.booksBindingNavigator.TabIndex = 0;
             this.booksBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -136,7 +138,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(38, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorCountItem.Text = "z {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Suma elementów";
             // 
@@ -177,7 +179,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Pozycja";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Bieżąca pozycja";
             // 
@@ -229,10 +231,11 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.booksDataGridView.DataSource = this.booksBindingSource;
-            this.booksDataGridView.Location = new System.Drawing.Point(12, 30);
+            this.booksDataGridView.Location = new System.Drawing.Point(9, 24);
+            this.booksDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.booksDataGridView.Name = "booksDataGridView";
             this.booksDataGridView.RowTemplate.Height = 24;
-            this.booksDataGridView.Size = new System.Drawing.Size(547, 393);
+            this.booksDataGridView.Size = new System.Drawing.Size(410, 319);
             this.booksDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -289,11 +292,12 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
             this.readersDataGridView.DataSource = this.readersBindingSource;
-            this.readersDataGridView.Location = new System.Drawing.Point(12, 465);
+            this.readersDataGridView.Location = new System.Drawing.Point(9, 378);
+            this.readersDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.readersDataGridView.Name = "readersDataGridView";
             this.readersDataGridView.ReadOnly = true;
             this.readersDataGridView.RowTemplate.Height = 24;
-            this.readersDataGridView.Size = new System.Drawing.Size(547, 91);
+            this.readersDataGridView.Size = new System.Drawing.Size(410, 74);
             this.readersDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn7
@@ -345,14 +349,24 @@
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
             // wszystkieksiazki
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 584);
+            this.ClientSize = new System.Drawing.Size(430, 474);
             this.Controls.Add(this.readersDataGridView);
             this.Controls.Add(this.booksDataGridView);
             this.Controls.Add(this.booksBindingNavigator);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "wszystkieksiazki";
             this.Text = "Wszystkie książki";
             this.Load += new System.EventHandler(this.wszystkieksiazki_Load);
@@ -404,5 +418,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

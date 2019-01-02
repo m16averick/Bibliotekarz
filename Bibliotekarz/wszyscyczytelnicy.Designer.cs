@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(wszyscyczytelnicy));
             this.libraryDataSet = new Bibliotekarz.LibraryDataSet();
             this.readersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.readersTableAdapter = new Bibliotekarz.LibraryDataSetTableAdapters.ReadersTableAdapter();
@@ -39,12 +40,12 @@
             this.booksReadersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.readersBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet1 = new Bibliotekarz.LibraryDataSet1();
             this.readersBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.readersBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.readersBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet1 = new Bibliotekarz.LibraryDataSet1();
             this.booksBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableAdapter1 = new Bibliotekarz.LibraryDataSet1TableAdapters.BooksTableAdapter();
             this.readersTableAdapter1 = new Bibliotekarz.LibraryDataSet1TableAdapters.ReadersTableAdapter();
             this.tableAdapterManager1 = new Bibliotekarz.LibraryDataSet1TableAdapters.TableAdapterManager();
@@ -64,6 +65,19 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.readersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.readersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
@@ -71,15 +85,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.booksReadersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.readersBindingNavigator)).BeginInit();
+            this.readersBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // libraryDataSet
@@ -132,6 +148,16 @@
             this.booksBindingSource1.DataMember = "Books";
             this.booksBindingSource1.DataSource = this.libraryDataSet1BindingSource;
             // 
+            // libraryDataSet1BindingSource
+            // 
+            this.libraryDataSet1BindingSource.DataSource = this.libraryDataSet1;
+            this.libraryDataSet1BindingSource.Position = 0;
+            // 
+            // libraryDataSet1
+            // 
+            this.libraryDataSet1.DataSetName = "LibraryDataSet1";
+            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // readersBindingSource3
             // 
             this.readersBindingSource3.DataMember = "Readers";
@@ -147,20 +173,10 @@
             this.readersBindingSource5.DataMember = "Readers";
             this.readersBindingSource5.DataSource = this.libraryDataSet1;
             // 
-            // libraryDataSet1
-            // 
-            this.libraryDataSet1.DataSetName = "LibraryDataSet1";
-            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // booksBindingSource2
             // 
             this.booksBindingSource2.DataMember = "Books";
             this.booksBindingSource2.DataSource = this.libraryDataSet1;
-            // 
-            // libraryDataSet1BindingSource
-            // 
-            this.libraryDataSet1BindingSource.DataSource = this.libraryDataSet1;
-            this.libraryDataSet1BindingSource.Position = 0;
             // 
             // booksTableAdapter1
             // 
@@ -193,10 +209,11 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.booksDataGridView.DataSource = this.booksBindingSource3;
-            this.booksDataGridView.Location = new System.Drawing.Point(12, 404);
+            this.booksDataGridView.Location = new System.Drawing.Point(9, 328);
+            this.booksDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.booksDataGridView.Name = "booksDataGridView";
             this.booksDataGridView.RowTemplate.Height = 24;
-            this.booksDataGridView.Size = new System.Drawing.Size(762, 62);
+            this.booksDataGridView.Size = new System.Drawing.Size(572, 50);
             this.booksDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -243,10 +260,11 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
             this.readersDataGridView.DataSource = this.readersBindingSource5;
-            this.readersDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.readersDataGridView.Location = new System.Drawing.Point(9, 44);
+            this.readersDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.readersDataGridView.Name = "readersDataGridView";
             this.readersDataGridView.RowTemplate.Height = 24;
-            this.readersDataGridView.Size = new System.Drawing.Size(762, 386);
+            this.readersDataGridView.Size = new System.Drawing.Size(572, 280);
             this.readersDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn6
@@ -297,15 +315,142 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "Apartament";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem.Text = "Przenieś pierwszy";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem.Text = "Przenieś poprzedni";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Pozycja";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Bieżąca pozycja";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorCountItem.Text = "z {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Suma elementów";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem.Text = "Przenieś następny";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem.Text = "Przenieś ostatni";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Text = "Dodaj nowy";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem.Text = "Usuń";
+            // 
+            // readersBindingNavigator
+            // 
+            this.readersBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.readersBindingNavigator.BindingSource = this.readersBindingSource5;
+            this.readersBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.readersBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.readersBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.readersBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.readersBindingNavigatorSaveItem});
+            this.readersBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.readersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.readersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.readersBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.readersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.readersBindingNavigator.Name = "readersBindingNavigator";
+            this.readersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.readersBindingNavigator.Size = new System.Drawing.Size(590, 27);
+            this.readersBindingNavigator.TabIndex = 2;
+            this.readersBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // readersBindingNavigatorSaveItem
+            // 
+            this.readersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.readersBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("readersBindingNavigatorSaveItem.Image")));
+            this.readersBindingNavigatorSaveItem.Name = "readersBindingNavigatorSaveItem";
+            this.readersBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
+            this.readersBindingNavigatorSaveItem.Text = "Zapisz dane";
+            this.readersBindingNavigatorSaveItem.Click += new System.EventHandler(this.readersBindingNavigatorSaveItem_Click);
+            // 
             // wszyscyczytelnicy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 478);
+            this.ClientSize = new System.Drawing.Size(590, 388);
+            this.Controls.Add(this.readersBindingNavigator);
             this.Controls.Add(this.readersDataGridView);
             this.Controls.Add(this.booksDataGridView);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "wszyscyczytelnicy";
-            this.Text = "Form2";
+            this.Text = "Wszyscy czytelnicy";
             this.Load += new System.EventHandler(this.wszyscyczytelnicy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource)).EndInit();
@@ -314,16 +459,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.booksReadersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersBindingSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.readersDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.readersBindingNavigator)).EndInit();
+            this.readersBindingNavigator.ResumeLayout(false);
+            this.readersBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -364,5 +513,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.BindingNavigator readersBindingNavigator;
+        public System.Windows.Forms.ToolStripButton readersBindingNavigatorSaveItem;
     }
 }

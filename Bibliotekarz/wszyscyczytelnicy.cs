@@ -37,5 +37,6 @@ namespace Bibliotekarz
             this.readersTableAdapter.Fill(this.libraryDataSet.Readers);
 
         }
+
     }
 }
