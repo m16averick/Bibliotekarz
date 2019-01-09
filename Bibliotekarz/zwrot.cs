@@ -47,7 +47,7 @@ namespace Bibliotekarz
                 }
 
                 command.Connection = connection;
-                command.CommandText = "Update Books SET Lender=NULL Where Id=" + Int32.Parse(txtIdB.Text);
+                command.CommandText = "Update Books SET Lender=NULL, Termin=NULL Where Id=" + Int32.Parse(txtIdB.Text);
 
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {
@@ -108,8 +108,10 @@ namespace Bibliotekarz
         {
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Readers' . Możesz go przenieść lub usunąć.
             this.readersTableAdapter.Fill(this.libraryDataSet.Readers);
+            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Readers' . Możesz go przenieść lub usunąć.
+            this.readersTableAdapter.Fill(this.libraryDataSet.Readers);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
-            this.booksTableAdapter.Fill(this.libraryDataSet.Books);
+            this.booksTableAdapter.FillBy1(this.libraryDataSet.Books);
 
         }
 
@@ -125,6 +127,19 @@ namespace Bibliotekarz
             string IdCzytelnika = value2.ToString();
             txtIdB.Text = IdKsiazki;
             txtIdR.Text = IdCzytelnika;
+        }
+
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.booksTableAdapter.FillBy1(this.libraryDataSet.Books);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

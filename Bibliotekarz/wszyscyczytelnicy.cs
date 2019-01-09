@@ -38,5 +38,14 @@ namespace Bibliotekarz
 
         }
 
+        private void readersBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

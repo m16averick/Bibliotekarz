@@ -109,12 +109,21 @@ namespace Bibliotekarz
                 command.Connection = connection;
                 command.CommandText = "Select * From Books";
 
+                string termin;
+                string now = DateTime.Now.AddDays(14).ToShortDateString();
                 using (DbDataReader dataReader = command.ExecuteReader())
                 {
                     while (dataReader.Read())
                     {
                         liczba_ksiazek++;
-                        if ($"{dataReader["lender"]} " != " ") liczba_wypozyczonych_ksiazek++;
+                        termin = $"{dataReader["termin"]}";
+                        if ($"{dataReader["lender"]} " != " ")
+                        {
+                            liczba_wypozyczonych_ksiazek++;
+                            if (DateTime.Parse(termin) < DateTime.Now) zaleglosci++;
+                        }
+
+
                         tbInfo.Text += $"{dataReader["Id"]} " + $"{dataReader["title"]} " + Environment.NewLine;
 
                     }
@@ -122,7 +131,7 @@ namespace Bibliotekarz
 
             }
 
-            tbInfo.Text += "Biblioteka jest obecnie w posiadaniu " + liczba_ksiazek + " książek z czego " + liczba_wypozyczonych_ksiazek + " znajduje sie w wypozyczeniu.";
+            tbInfo.Text += "Biblioteka jest obecnie w posiadaniu " + liczba_ksiazek + " książek z czego " + liczba_wypozyczonych_ksiazek + " znajduje sie w wypozyczeniu oraz " + zaleglosci + " leży zaległych u czytelników.";
 
 
         }
@@ -138,6 +147,12 @@ namespace Bibliotekarz
         {
             wszyscyczytelnicy wszyscyczytelnicy = new wszyscyczytelnicy();
             wszyscyczytelnicy.ShowDialog();
+        }
+
+        private void btnZaleglosci_Click(object sender, EventArgs e)
+        {
+            zaleglosci zaleglosci = new zaleglosci();
+            zaleglosci.ShowDialog();
         }
     }
 }

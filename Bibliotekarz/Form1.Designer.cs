@@ -36,7 +36,7 @@
             this.btnNowyCzytelnik = new System.Windows.Forms.Button();
             this.btnWszystkieKsiazki = new System.Windows.Forms.Button();
             this.btnWszyscyCzytelnicy = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnZaleglosci = new System.Windows.Forms.Button();
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -117,18 +117,15 @@
             this.btnWszyscyCzytelnicy.UseVisualStyleBackColor = true;
             this.btnWszyscyCzytelnicy.Click += new System.EventHandler(this.btnWszyscyCzytelnicy_Click);
             // 
-            // button1
+            // btnZaleglosci
             // 
-            this.button1.Location = new System.Drawing.Point(427, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 37);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Zaległości";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // bazaaaDataSet
-            // 
-
+            this.btnZaleglosci.Location = new System.Drawing.Point(427, 333);
+            this.btnZaleglosci.Name = "btnZaleglosci";
+            this.btnZaleglosci.Size = new System.Drawing.Size(171, 37);
+            this.btnZaleglosci.TabIndex = 7;
+            this.btnZaleglosci.Text = "Zaległości";
+            this.btnZaleglosci.UseVisualStyleBackColor = true;
+            this.btnZaleglosci.Click += new System.EventHandler(this.btnZaleglosci_Click);
             // 
             // booksBindingSource
             // 
@@ -139,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 523);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnZaleglosci);
             this.Controls.Add(this.btnWszyscyCzytelnicy);
             this.Controls.Add(this.btnWszystkieKsiazki);
             this.Controls.Add(this.btnNowyCzytelnik);
@@ -153,6 +150,7 @@
             this.Name = "Form1";
             this.Text = "Bibliotekarz";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,7 +166,7 @@
         private System.Windows.Forms.BindingSource booksBindingSource;
         private System.Windows.Forms.Button btnWszystkieKsiazki;
         private System.Windows.Forms.Button btnWszyscyCzytelnicy;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnZaleglosci;
     }
 }
 

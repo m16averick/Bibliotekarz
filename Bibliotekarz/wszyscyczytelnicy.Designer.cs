@@ -346,6 +346,7 @@
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Bieżąca pozycja";
+            this.bindingNavigatorPositionItem.Click += new System.EventHandler(this.bindingNavigatorPositionItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -430,6 +431,7 @@
             this.readersBindingNavigator.Size = new System.Drawing.Size(590, 27);
             this.readersBindingNavigator.TabIndex = 2;
             this.readersBindingNavigator.Text = "bindingNavigator1";
+            this.readersBindingNavigator.RefreshItems += new System.EventHandler(this.readersBindingNavigator_RefreshItems);
             // 
             // readersBindingNavigatorSaveItem
             // 
