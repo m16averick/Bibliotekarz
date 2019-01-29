@@ -68,6 +68,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LibraryDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="wszyscyczytelnicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wszyscyczytelnicy.Designer.cs">
+      <DependentUpon>wszyscyczytelnicy.cs</DependentUpon>
+    </Compile>
     <Compile Include="zaleglosci.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +98,6 @@
     </Compile>
     <Compile Include="nowyczytelnik.Designer.cs">
       <DependentUpon>nowyczytelnik.cs</DependentUpon>
-    </Compile>
-    <Compile Include="wszyscyczytelnicy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="wszyscyczytelnicy.Designer.cs">
-      <DependentUpon>wszyscyczytelnicy.cs</DependentUpon>
     </Compile>
     <Compile Include="wszystkieksiazki.cs">
       <SubType>Form</SubType>
@@ -179,6 +184,17 @@
     </None>
     <None Include="LibraryDataSet1.xss">
       <DependentUpon>LibraryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDataSet2.xsc">
+      <DependentUpon>LibraryDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryDataSet2.xss">
+      <DependentUpon>LibraryDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

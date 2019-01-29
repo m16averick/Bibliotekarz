@@ -1,0 +1,3 @@
+Każdy widok można podzielić z grubsza na dwa elementy: pierwszy to projekt graficzny, w którym ustawiamy widoczne typy oraz drugi w którym łączymy ze sobą te elementy używając języka i składni.
+
+Zapytania w tym programie wykonywane są na dwa sposoby. Z jednej strony analizuję bazy danych używając binding source, a z drugiej kiedy chcę mieć pełną kontrolę nad połączeniem muszę obsługiwać je ręcznie. 
