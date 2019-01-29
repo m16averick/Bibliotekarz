@@ -93,6 +93,16 @@ SELECT Id, Title, Author, Lender, Termin FROM Books WHERE (Id = @Id)</CommandTex
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="LibraryConnectionString (Settings)" DbObjectName="Library.dbo.Books" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Title, Author, Lender, Termin
+FROM     Books
+WHERE  (Lender IS NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReadersTableAdapter" GeneratorDataComponentClassName="ReadersTableAdapter" Name="Readers" UserDataComponentName="ReadersTableAdapter">
@@ -195,7 +205,7 @@ SELECT Id, Name, Surname, City, Postcode, Street, Number, Apartament FROM Reader
   <xs:element name="LibraryDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="LibraryDataSet" msprop:Generator_UserDSName="LibraryDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Books" msprop:Generator_TableClassName="BooksDataTable" msprop:Generator_TableVarName="tableBooks" msprop:Generator_TablePropName="Books" msprop:Generator_RowDeletingName="BooksRowDeleting" msprop:Generator_RowChangingName="BooksRowChanging" msprop:Generator_RowEvHandlerName="BooksRowChangeEventHandler" msprop:Generator_RowDeletedName="BooksRowDeleted" msprop:Generator_UserTableName="Books" msprop:Generator_RowChangedName="BooksRowChanged" msprop:Generator_RowEvArgName="BooksRowChangeEvent" msprop:Generator_RowClassName="BooksRow">
+        <xs:element name="Books" msprop:Generator_TableClassName="BooksDataTable" msprop:Generator_TableVarName="tableBooks" msprop:Generator_RowChangedName="BooksRowChanged" msprop:Generator_TablePropName="Books" msprop:Generator_RowDeletingName="BooksRowDeleting" msprop:Generator_RowChangingName="BooksRowChanging" msprop:Generator_RowEvHandlerName="BooksRowChangeEventHandler" msprop:Generator_RowDeletedName="BooksRowDeleted" msprop:Generator_RowClassName="BooksRow" msprop:Generator_UserTableName="Books" msprop:Generator_RowEvArgName="BooksRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -218,7 +228,7 @@ SELECT Id, Name, Surname, City, Postcode, Street, Number, Apartament FROM Reader
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Readers" msprop:Generator_TableClassName="ReadersDataTable" msprop:Generator_TableVarName="tableReaders" msprop:Generator_TablePropName="Readers" msprop:Generator_RowDeletingName="ReadersRowDeleting" msprop:Generator_RowChangingName="ReadersRowChanging" msprop:Generator_RowEvHandlerName="ReadersRowChangeEventHandler" msprop:Generator_RowDeletedName="ReadersRowDeleted" msprop:Generator_UserTableName="Readers" msprop:Generator_RowChangedName="ReadersRowChanged" msprop:Generator_RowEvArgName="ReadersRowChangeEvent" msprop:Generator_RowClassName="ReadersRow">
+        <xs:element name="Readers" msprop:Generator_TableClassName="ReadersDataTable" msprop:Generator_TableVarName="tableReaders" msprop:Generator_RowChangedName="ReadersRowChanged" msprop:Generator_TablePropName="Readers" msprop:Generator_RowDeletingName="ReadersRowDeleting" msprop:Generator_RowChangingName="ReadersRowChanging" msprop:Generator_RowEvHandlerName="ReadersRowChangeEventHandler" msprop:Generator_RowDeletedName="ReadersRowDeleted" msprop:Generator_RowClassName="ReadersRow" msprop:Generator_UserTableName="Readers" msprop:Generator_RowEvArgName="ReadersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -275,7 +285,7 @@ SELECT Id, Name, Surname, City, Postcode, Street, Number, Apartament FROM Reader
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Books_Readers" msdata:parent="Books" msdata:child="Readers" msdata:parentkey="Lender" msdata:childkey="Id" msprop:Generator_UserChildTable="Readers" msprop:Generator_ChildPropName="GetReadersRows" msprop:Generator_UserRelationName="Books_Readers" msprop:Generator_RelationVarName="relationBooks_Readers" msprop:Generator_UserParentTable="Books" msprop:Generator_ParentPropName="BooksRow" />
+      <msdata:Relationship name="Books_Readers" msdata:parent="Books" msdata:child="Readers" msdata:parentkey="Lender" msdata:childkey="Id" msprop:Generator_UserChildTable="Readers" msprop:Generator_ChildPropName="GetReadersRows" msprop:Generator_UserRelationName="Books_Readers" msprop:Generator_ParentPropName="BooksRow" msprop:Generator_RelationVarName="relationBooks_Readers" msprop:Generator_UserParentTable="Books" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

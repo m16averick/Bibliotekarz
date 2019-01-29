@@ -154,5 +154,11 @@ namespace Bibliotekarz
             zaleglosci zaleglosci = new zaleglosci();
             zaleglosci.ShowDialog();
         }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            tbInfo.Text = "";
+            Form1_Load(this, e);
+        }
     }
 }

@@ -89,6 +89,8 @@ namespace Bibliotekarz
 
             }
 
+            zwrot_Load(this, e);
+
         }
 
         private void txtIdR_TextChanged(object sender, EventArgs e)

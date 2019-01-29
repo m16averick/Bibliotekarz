@@ -74,21 +74,11 @@ namespace Bibliotekarz
 
         private void wypozyczenie_Load(object sender, EventArgs e)
         {
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet11.Readers' . Możesz go przenieść lub usunąć.
-            this.readersTableAdapter1.Fill(this.libraryDataSet11.Readers);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet1.Readers' . Możesz go przenieść lub usunąć.
-            this.readersTableAdapter.Fill(this.libraryDataSet1.Readers);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet1.Books' . Możesz go przenieść lub usunąć.
-            this.booksTableAdapter1.Fill(this.libraryDataSet1.Books);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Readers' . Możesz go przenieść lub usunąć.
             this.readersTableAdapter.Fill(this.libraryDataSet.Readers);
+
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
-            this.booksTableAdapter1.Fill(this.libraryDataSet.Books);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Readers' . Możesz go przenieść lub usunąć.
-            this.readersTableAdapter.Fill(this.libraryDataSet.Readers);
-            // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
-            this.booksTableAdapter1.Fill(this.libraryDataSet.Books);
-            Fillcombo();
+            this.booksTableAdapter1.FillBy2(this.libraryDataSet.Books);
+
         }
 
         private void titleTextBox_TextChanged(object sender, EventArgs e)
@@ -318,7 +308,9 @@ namespace Bibliotekarz
                 txtApprove.Text += " Termin: " + termin;
         }
 
-    }
+            wypozyczenie_Load(this, e);
+
+        }
 
         private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -332,6 +324,28 @@ namespace Bibliotekarz
         private void readersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             object value = booksDataGridView.Rows[e.RowIndex].Cells[0].Value;
+            if (value is DBNull) { return; }
+
+            string IdCzytelnika = value.ToString();
+            txtIdR.Text = IdCzytelnika;
+        }
+
+        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.booksTableAdapter1.FillBy2(this.libraryDataSet.Books);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void readersDataGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            object value = readersDataGridView.Rows[e.RowIndex].Cells[0].Value;
             if (value is DBNull) { return; }
 
             string IdCzytelnika = value.ToString();
