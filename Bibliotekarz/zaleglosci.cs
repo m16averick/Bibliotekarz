@@ -30,7 +30,20 @@ namespace Bibliotekarz
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Readers' . Możesz go przenieść lub usunąć.
             this.readersTableAdapter.Fill(this.libraryDataSet.Readers);
             // TODO: Ten wiersz kodu wczytuje dane do tabeli 'libraryDataSet.Books' . Możesz go przenieść lub usunąć.
-            this.booksTableAdapter.Fill(this.libraryDataSet.Books);
+            this.booksTableAdapter.FillBy3(this.libraryDataSet.Books);
+
+        }
+
+        private void fillBy3ToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.booksTableAdapter.FillBy3(this.libraryDataSet.Books);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
     }
