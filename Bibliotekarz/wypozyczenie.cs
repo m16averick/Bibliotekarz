@@ -183,7 +183,7 @@ namespace Bibliotekarz
         {
 
         }
-
+        /*
         private void Button1_Click(object sender, EventArgs e)
         {
 
@@ -237,10 +237,11 @@ namespace Bibliotekarz
 
 
         }
-                   
+                 */  
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            if (txtIdB.Text.Length==0 || txtIdR.Text.Length == 0) { }
+            else { 
             string provider = ConfigurationManager.AppSettings["provider"];
             string connectionString = ConfigurationManager.AppSettings["connectionString"];
             DbProviderFactory factory = DbProviderFactories.GetFactory(provider);
@@ -262,7 +263,7 @@ namespace Bibliotekarz
                 }
 
 
-                string termin = DateTime.Now.AddDays(14).ToShortDateString();
+                string termin = DateTime.Now.AddDays(14).ToString("yyyy-MM-dd");
                 command.Connection = connection;
                 command.CommandText = "Update Books SET Lender=" + Int32.Parse(txtIdR.Text) + ", Termin='" + termin + "' Where Id=" + Int32.Parse(txtIdB.Text);
                 //               command.CommandText = "Update Books SET Lender=" + Int32.Parse(txtIdR.Text) + "Where Id=" + Int32.Parse(txtIdB.Text);
@@ -276,8 +277,8 @@ namespace Bibliotekarz
                     }
                 }
 
-                command.CommandText = "Select * From Readers Where Id="+Int32.Parse(txtIdR.Text);
-                
+                command.CommandText = "Select * From Readers Where Id=" + Int32.Parse(txtIdR.Text);
+
 
                 using (DbDataReader dataReader2 = command.ExecuteReader())
                 {
@@ -288,28 +289,32 @@ namespace Bibliotekarz
                     }
                 }
 
-            
 
 
-            txtApprove.Text += "Wypożycza ";
 
-            command.CommandText = "Select * From Books Where Id=" + Int32.Parse(txtIdB.Text);
+                txtApprove.Text += "Wypożycza ";
+
+                command.CommandText = "Select * From Books Where Id=" + Int32.Parse(txtIdB.Text);
 
 
-            using (DbDataReader dataReader3 = command.ExecuteReader())
-            {
-                while (dataReader3.Read())
+                using (DbDataReader dataReader3 = command.ExecuteReader())
                 {
-                    txtApprove.Text += $"{dataReader3["Title"]} " /* + $"{dataReader3["Author"]} "*/ ;
+                    while (dataReader3.Read())
+                    {
+                        txtApprove.Text += $"{dataReader3["Title"]} " /* + $"{dataReader3["Author"]} "*/ ;
 
+                    }
                 }
-            }
 
-                txtApprove.Text += " Termin: " + termin;
-        }
+                txtApprove.Text += " Termin: " + DateTime.Now.AddDays(14).ToShortDateString();
+
+
+
+            }
 
             wypozyczenie_Load(this, e);
 
+            }
         }
 
         private void booksDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

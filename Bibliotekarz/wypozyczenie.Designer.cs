@@ -244,7 +244,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.booksDataGridView.DataSource = this.booksBindingSource1;
-            this.booksDataGridView.Location = new System.Drawing.Point(89, 391);
+            this.booksDataGridView.Location = new System.Drawing.Point(89, 449);
             this.booksDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.booksDataGridView.Name = "booksDataGridView";
             this.booksDataGridView.ReadOnly = true;
@@ -325,7 +325,7 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.readersDataGridView.DataSource = this.readersBindingSource;
-            this.readersDataGridView.Location = new System.Drawing.Point(89, 217);
+            this.readersDataGridView.Location = new System.Drawing.Point(89, 266);
             this.readersDataGridView.Name = "readersDataGridView";
             this.readersDataGridView.ReadOnly = true;
             this.readersDataGridView.RowTemplate.Height = 24;
@@ -338,48 +338,56 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Name";
             this.dataGridViewTextBoxColumn6.HeaderText = "Name";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Surname";
             this.dataGridViewTextBoxColumn7.HeaderText = "Surname";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "City";
             this.dataGridViewTextBoxColumn8.HeaderText = "City";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Postcode";
             this.dataGridViewTextBoxColumn9.HeaderText = "Postcode";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "Street";
             this.dataGridViewTextBoxColumn10.HeaderText = "Street";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Number";
             this.dataGridViewTextBoxColumn11.HeaderText = "Number";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "Apartament";
             this.dataGridViewTextBoxColumn12.HeaderText = "Apartament";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // wypozyczenie
             // 
